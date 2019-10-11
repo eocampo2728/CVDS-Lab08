@@ -18,31 +18,34 @@
         <h:form id="registroalquiler_form">
             <section>
                 <div style="text-align: center" class='table'>
-                    <h:datatable value="#{AlquilerItemsBean.itemsRentados}" var = "dato" style="margin: 0 auto;">
+                    <p:dataTable class="registroa" value="#{AlquilerItemsBean.itemsRentados}" var = "dato" style="margin: 0 auto;"
+                                  rows="10" paginator="true" 
+                                  paginatorTemplate="{RowsPerPageDropdown} {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}" 
+                                  rowsPerPageTemplate="8,10,15">
                         <p:column headerText="Item Rentado" filterBy="#{dato.id_itemRentado}">
-                            <h:outputext value="#{dato.id_itemRentado}"></h:outputext>
+                            <h:outputText value="#{dato.id_itemRentado}"></h:outputText>
                         </p:column>
 
                         <p:column headerText="Item Rentado" filterBy="#{dato.fecha_inicioRenta}">
-                            <h:outputext value="#{dato.fecha_inicioRenta}"></h:outputext>
+                            <h:outputText value="#{dato.fecha_inicioRenta}"></h:outputText>
                         </p:column>
 
                         <p:column headerText="Item Rentado" filterBy="#{dato.fechafinrenta}">
-                            <h:outputext value="#{dato.fechafinrenta}"></h:outputext>
+                            <h:outputText value="#{dato.fechafinrenta}"></h:outputText>
                         </p:column>
 
                         <p:column headerText="Item Rentado" filterBy="#{dato.id_item}">
-                            <h:outputext value="#{dato.id_item}"></h:outputext>
+                            <h:outputText value="#{dato.id_item}"></h:outputText>
                         </p:column>
 
                         <p:column headerText="Item Rentado" filterBy="#{dato.nombre_item}">
-                            <h:outputext value="#{dato.nombre_item}"></h:outputext>
+                            <h:outputText value="#{dato.nombre_item}"></h:outputText>
                         </p:column>    
 
                         <p:column headerText="Item Rentado" filterBy="#{dato.multa_total}">
-                            <h:outputext value="#{dato.multa_total}"></h:outputext>
+                            <h:outputText value="#{dato.multa_total}"></h:outputText>
                         </p:column>
-                    </h:datatable>
+                    </p:dataTable>
                 </div>
             </section>
         </h:form>
