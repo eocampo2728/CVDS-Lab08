@@ -8,6 +8,6 @@
 </head>
 
 <body>
-    <p> Index </p>
+    <p> https://cvds-lab-08.herokuapp.com/faces/registrocliente.xhtml </p>
 </body>
 </html>
