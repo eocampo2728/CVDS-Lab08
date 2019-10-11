@@ -29,7 +29,7 @@
         left join VI_ITEMRENTADO as ir on c.documento=ir.CLIENTES_documento 
         left join VI_ITEMS as i on ir.ITEMS_id=i.id 
         left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id 
-        WHERE c.documento = #{idcli}
+        WHERE c.documento = #{id_cliente}
     </select> 
     
     <select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
@@ -60,8 +60,12 @@
 
     <insert parameterType="map" id="agregarItemRentadoACliente">
         insert into VI_ITEMRENTADO(CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta)
-        values (#{idcli},#{iditem},#{fechainicial},#{fechafinal})
-        
+        values (#{id_cliente},#{id_item},#{fechainiciorenta},#{fechafinrenta})   
+    </insert>
+    
+    <insert id ="insertarCliente">
+    	insert into VI_CLIENTES (documento,nombre,telefono,direccion,email,vetado) 
+    	values (#{cliente.documento},#{cliente.nombre},#{cliente.telefono},#{cliente.direccion},#{cliente.email}, #{cliente.vetado})
     </insert>
     
     <resultMap type='Cliente' id='ClienteResult'>
