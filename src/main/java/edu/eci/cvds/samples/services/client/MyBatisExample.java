@@ -76,7 +76,7 @@ public class MyBatisExample {
         System.out.println(cm.consultarCliente(6));
          
         // Se agrega el itemRentado 15 "Mazda" al cliente #6 Elkin con las fechas respectivas. 
-        cm.agregarItemRentadoACliente(6, 15, dateFormat("4/10/2019"), dateFormat("20/12/2019"));
+        cm.agregarItemRentadoACliente(6, 15, dateFormat("4/10/2020"), dateFormat("20/12/2020"));
         
         sqlss.commit();
         sqlss.close();

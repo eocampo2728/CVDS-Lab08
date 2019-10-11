@@ -188,6 +188,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
        }
    }
 
+
    @Override
    public long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler {
        if (!itemsDisponibles.containsKey(iditem)) {
@@ -237,6 +238,12 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
        clientes.put(c1.getDocumento(), c1);
        clientes.put(c2.getDocumento(), c2);
        clientes.put(c3.getDocumento(), c3);
-
+   }
+   
+   public static void main(String args[]){
+       ServiciosAlquilerItemsStub prueba = new ServiciosAlquilerItemsStub();
+       prueba.poblar();
+       System.out.println(prueba.consultarItemsDisponibles());
+       
    }
 }

@@ -26,11 +26,6 @@ public interface ServiciosAlquiler {
 
    public abstract Item consultarItem(int id) throws ExcepcionServiciosAlquiler;
 
-   /**
-    * @obj consultar los items que estan disponibles para alquiler
-    * @return el listado de items disponibles
-    * @throws ExcepcionServiciosAlquiler Si hay un error consultando los items disponibles-null
-    */
    public abstract List<Item> consultarItemsDisponibles() throws ExcepcionServiciosAlquiler;
 
    /**
@@ -39,7 +34,7 @@ public interface ServiciosAlquiler {
    * @param iditem el codigo del item alquilado
    * @param fechaDevolucion la fecha de devolucion del item
    * @return la multa en funcion del numero de dias de retraso. Si el item se
-   * entrega en la fecha exacta de entrega, o antes, la multa sera cero.
+   * entrega en la fech a exacta de entrega, o antes, la multa sera cero.
    * @throws ExcepcionServiciosAlquiler si el item no existe o no esta
    * actualmente alquilado
    */
@@ -48,7 +43,7 @@ public interface ServiciosAlquiler {
    public abstract TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler;
 
    public abstract List<TipoItem> consultarTiposItem() throws ExcepcionServiciosAlquiler;
-
+  
    /**
    * @obj rejistrar el alkiler de un item
    * @pre numdias >=1
@@ -79,7 +74,7 @@ public interface ServiciosAlquiler {
    public abstract void actualizarTarifaItem(int id, long tarifa) throws ExcepcionServiciosAlquiler;
 
    public abstract void registrarItem(Item i) throws ExcepcionServiciosAlquiler;
-
+   
    public abstract void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler;
 
 }
